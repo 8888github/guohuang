@@ -1,0 +1,45 @@
+
+/* 10px 字体*/
+.font_size_10{
+    font-size: 0.1rem !important;
+}
+
+/* 12px 字体*/
+.font_size_12{
+    font-size: 0.12rem !important;
+}
+
+/* 14px 字体*/
+.font_size_14{
+    font-size: 0.14rem !important;
+}
+
+/* 16px 字体*/
+.font_size_16{
+    font-size: 0.16rem !important;
+}
+
+
+/* 字体类型 */
+
+.font_normal{
+  font-weight: normal;
+}
+
+.font_bold{
+    font-weight: bold;
+}
+
+
+/* 字体颜色 */
+
+.font_color{
+  color: #333333;
+}
+
+
+/* 字体行高 */
+
+.font_line-height_18{
+  line-height: 0.32rem;
+}

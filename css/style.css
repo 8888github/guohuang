@@ -1,0 +1,358 @@
+/* 1rem=1(a)X10X6.4(px)即64px。 */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+    font-weight: normal;
+    font-family: "微软雅黑";
+    box-sizing: border-box;
+    font-style: normal;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(to right, #2c324d, #3f4561);
+    background-size: cover;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.top-bar {
+    width: 100%;
+    height: .88rem;
+    line-height: .88rem;
+    text-align: center;
+    position: relative;
+    font-size: .34rem;
+    color: #fff;
+    border-bottom: .01rem solid #474c65;
+}
+
+.top-bar a {
+    width: .5rem;
+    height: .88rem;
+    position: absolute;
+    top: 0;
+    left: .3rem;
+    background: url(../images/icon-back.png) left center no-repeat;
+    background-size: .23rem auto;
+    z-index: 2;
+}
+
+.top-bar i {
+    width: .5rem;
+    height: .88rem;
+    position: absolute;
+    top: 0;
+    right: .3rem;
+    background: url(../images/icon-more.png) right center no-repeat;
+    background-size: .41rem auto;
+    z-index: 2;
+}
+
+/* 我的个人账户 */
+.account {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .35rem .45rem 0 .45rem;
+}
+
+.account .l {
+    display: flex;
+}
+
+.account .l img {
+    width: .65rem;
+    height: .65rem;
+}
+
+.account .l .info {
+    display: flex;
+    flex-direction: column;
+    padding-left: .2rem;
+}
+
+.account .l .info p {
+    font-size: .25rem;
+    color: #fff;
+}
+
+.account .l .info span {
+    font-size: .2rem;
+    color: #999ba6;
+}
+
+.account .r {
+    font-size: .2rem;
+    color: #999ba6;
+    display: flex;
+    align-items: center;
+}
+
+.account .r i {
+    flex-shrink: 0;
+    display: inline-block;
+    width: .08rem;
+    height: .16rem;
+    background: url(../images/icon-triangle.png) center center no-repeat;
+    background-size: 100% auto;
+    margin-left: .1rem;
+}
+
+/* 消费占比图表 */
+.consumption-percent {
+    width: 100%;
+    width: 6.94rem;
+    margin: 0 auto;
+    background: linear-gradient(to right, #42475f, #545a73);
+    padding: .4rem .4rem;
+    border-radius: .15rem;
+    margin-top: .4rem;
+}
+
+.consumption-percent .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.consumption-percent .title h4 {
+    font-size: .34rem;
+    color: #fff;
+}
+
+.consumption-percent .title span {
+    color: #babcc6;
+    font-size: .2rem
+}
+
+.consumption-percent .chart {
+    width: 100%;
+    height: 3.3rem;
+}
+
+/* 明细 */
+.detail {
+    width: 100%;
+    width: 6.94rem;
+    margin: 0 auto;
+    background: linear-gradient(to right, #42475f, #545a73);
+    padding: .4rem .4rem .1rem .4rem;
+    border-radius: .15rem;
+    margin-top: .4rem;
+}
+
+.detail .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail .title h4 {
+    font-size: .34rem;
+    color: #fff;
+}
+
+.detail .title span {
+    color: #babcc6;
+    font-size: .2rem
+}
+
+.detail .list {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: .15rem;
+}
+
+.detail .list ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.detail .list ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .3rem 0;
+    position: relative;
+}
+
+.detail .list ul li::after {
+    content: "";
+    display: block;
+    height: .01rem;
+    width: 5.1rem;
+    background: linear-gradient(to right, #535870, #5e6273);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.detail .list ul li:last-child:after {
+    display: none;
+}
+
+.detail .list ul li .l {
+    display: flex;
+    align-items: center;
+}
+
+.detail .list ul li .l img {
+    width: .8rem;
+    height: .8rem;
+}
+
+.detail .list ul li .l .info {
+    display: flex;
+    flex-direction: column;
+    padding-left: .25rem;
+}
+
+.detail .list ul li .l .info p {
+    font-size: .3rem;
+    color: #fff;
+}
+
+.detail .list ul li .l .info p sup {
+    display: inline-block;
+    width: .34rem;
+    height: .31rem;
+    background: url(../images/icon-pic.png) center center no-repeat;
+    background-size: 100% 100%;
+    margin-left: .2rem;
+}
+
+.detail .list ul li .l .info span {
+    font-size: .2rem;
+    color: #8f92a1;
+    padding-top: .1rem;
+}
+
+.detail .list ul li .r {
+    display: flex;
+    align-items: center;
+}
+
+.detail .list ul li .r span {
+    font-size: .3rem;
+    color: #fff;
+    padding-right: .25rem;
+}
+
+.detail .list ul li .r i {
+    flex-shrink: 0;
+    display: inline-block;
+    width: .4rem;
+    height: .4rem;
+    line-height: .4rem;
+    text-align: center;
+    border-radius: 100%;
+    font-size: .22rem;
+    color: #fff;
+    background: #9698a5;
+}
+
+/* 尾部导航 */
+.holder {
+    width: 100%;
+    height: 1.65rem;
+}
+
+.foot-bar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    border-top: .01rem solid #535870;
+    background: linear-gradient(to right, #2c324d, #3f4561);
+}
+
+.foot-bar ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: .2rem;
+    color: #fff;
+    letter-spacing: .03rem;
+}
+
+.foot-bar ul li {
+    width: 100%;
+    text-align: center;
+    height: 1.1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.foot-bar ul li i {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 100%;
+    height: .3rem;
+    margin-top: .08rem;
+}
+
+.foot-bar ul li span {
+    padding-top: .15rem;
+}
+
+.foot-bar ul li.middle {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 100%;
+    background: linear-gradient(#fe5e81, #fe4475);
+    margin-top: -0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-bar ul li.middle i {
+    width: .33rem;
+    height: .33rem;
+    background: url(../images/tap-bar-middle.png) center center no-repeat;
+    background-size: .33rem auto;
+    margin-top: 0;
+}
+
+.foot-bar ul li:nth-child(1) i {
+    background: url(../images/tap-bar-bank.png) center center no-repeat;
+    background-size: .3rem auto;
+}
+
+.foot-bar ul li:nth-child(2) i {
+    background: url(../images/tap-bar-album.png) center center no-repeat;
+    background-size: .3rem auto;
+}
+
+.foot-bar ul li:nth-child(4) i {
+    background: url(../images/tap-bar-detail.png) center center no-repeat;
+    background-size: .3rem auto;
+}
+
+.foot-bar ul li:nth-child(5) i {
+    background: url(../images/tap-bar-more.png) center center no-repeat;
+    background-size: .3rem auto;
+}
+
+.foot-bar ul li.active span {
+    font-weight: bold;
+}

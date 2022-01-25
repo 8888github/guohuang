@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 136.533px;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="./css/privacy.css">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+
+    <script src="./js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <title>中国国际航空-隐私政策</title>
+</head>
+
+<body style="font-size: 24px;">
+    <div class="">
+        <div class="header">
+            <div class="header-box">
+                <div class="logo">
+                    <img src="./image/logo.png" alt="">
+                </div>
+                <div class="right">
+                    <div class="right-top font_size_14">中国国际航空</div>
+                    <div class="right-bottom font_size_16 font_bold">隐私政策</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="privacy-main">
+            <div class="font_size_12">
+                中国国际航空股份有限公司（以下简称为 “ 我们 ”）深知个人信息的重要性，我们将按法律法规要求，采取相应安全保护措施。我们希望通过本隐私政策向您说明在您 使用我们的产品和服务时，
+                我们如何收集和使用您的个人信息。
+            </div>
+            <p class="font_size_12">
+                本隐私政策将帮助您了解以下内容：
+            </p>
+            <p class="font_size_12">
+                1 、我们如何收集和使用您的个人信息
+            </p>
+            <p class="font_size_12">
+                2 、我们如何使用 cookie 和同类技术
+            </p>
+            <p class="font_size_12">
+                3 、我们如何分享您的个人信息
+            </p>
+            <p class="font_size_12">
+                4 、我们处理您的个人信息的法律依据
+            </p>
+            <p class="font_size_12">
+                5 、我们如何保护和存储您的个人信息
+            </p>
+            <p class="font_size_12">
+                6 、您的个人信息权利
+            </p>
+            <p class="font_size_12">
+                7 、不满 14 周岁未成年人的个人信息保护
+            </p>
+            <p class="font_size_12">
+                8 、您的个人信息如何在全球范围内传输
+            </p>
+            <p class="font_size_12">
+                9 、本政策如何更新
+            </p>
+            <p class="font_size_12">
+                10 、如何联系我们
+            </p>
+
+            <p class="font_size_12">
+                在使用我们各项产品或服务前，请您务必仔细阅读并透彻理解本隐私政策，在确认充分理解并同意后使用相关产品或服务。
+            </p>
+
+            <p class="font_size_12">
+                1 、我们如何收集和使用您的个人信息
+            </p>
+            <p class="font_size_12"> 2 、我们如何使用 cookie 和同类技术 </p>
+            <p class="font_size_12">3 、我们如何分享您的个人信息</p>
+
+        </div>
+
+        <div class="bottom">
+            <div class="form_box" id="Oradio">
+                <div class="read_title font_size_12">
+                    <div class="radio_box">
+                        <img id="imgradio" src="./image/radio_opt.png" alt="">
+                    </div>
+                    <div class="titles">
+                        报名该活动默认同时报名</div>
+                    <div>广汽集团员工身份认证活动</div>
+                </div>
+            </div>
+            <div class="btn font_size_14" id="form_but">同意并参与</div>
+        </div>
+    </div>
+
+    <!-- 弹框提示 -->
+    <div class="tip font_size_12" id="tips">
+        请勾选广汽集团员工身份认证活动
+    </div>
+
+    <div class="bounced_main vux-modal-open" id="obounced">
+        <div class="content_main">
+            <div class="content_title font_size_14">广汽集团员工身份认证活动</div>
+            <div class="content font_size_12">
+                <p>中国国际航空股份有限公司开展大客户业务至今一直不断丰富优化合作模式、致力于为客户提供专业的差旅解决方案，以帮助客户把控差旅成本，优化差旅员工出行体验。</p>
+                <p>国航诚邀您进行企业客户身份认证，同意国航基于您所在公司与国航的合作关系以及已备案的带有公司尾缀的企业邮箱，验证并识别您的企业客户身份。</p>
+                <p>若您成功完成企业客户身份认证，国航将根据您的出行情况不定期推送优惠产品/服务至您在国航APP中的“个人中心账户”，可为您的因公因私出行带来便利。</p>
+            </div>
+            <div class="close" id="Oclose">
+                <div class=" font_size_14">关闭</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    window.onload = function () {
+
+        
+        let Oradio = document.querySelector("#Oradio");
+        let Oclose = document.querySelector("#Oclose");
+        let obounced = document.querySelector("#obounced");
+        let imgradio = document.querySelector("#imgradio");
+        let oform_but = document.querySelector("#form_but");
+        let otips = document.querySelector("#tips");
+
+
+        // 初始化
+        let cut = false;
+        imgradio.setAttribute("src", "./image/radio_cancel.png");
+        obounced.style.display = "none";
+        otips.style.display = "none";
+
+        // 提交
+        oform_but.addEventListener('click', function () {
+            if (cut) {
+                window.location.href = "./index.html";
+            } else {
+                otips.style.display = "block";
+            }
+            setTimeout(function () {
+                otips.style.display = "none";
+            }, 3800)
+            return;
+        })
+
+
+        //切换
+        function cutRadio() {
+            cut = !cut
+            if (cut) {
+                imgradio.setAttribute("src", "./image/radio_opt.png");
+                obounced.style.display = "block";
+            } else {
+                imgradio.setAttribute("src", "./image/radio_cancel.png");
+                obounced.style.display = "none";
+            }
+            return cut
+        }
+
+        Oradio.addEventListener('click', function () {
+            cutRadio()
+        })
+
+
+        obounced.addEventListener('click', function (e) {
+            stopDefault(e)
+            return false
+        })
+
+        Oclose.addEventListener('click', function () {
+            obounced.style.display = "none";
+        })
+
+
+        //阻止浏览器的默认行为 
+        function stopDefault(e) {
+            //阻止默认浏览器动作(W3C) 
+            if (e && e.preventDefault)
+                e.preventDefault();
+            //IE中阻止函数器默认动作的方式 
+            else
+                window.event.returnValue = false;
+            return false;
+        }
+    }
+</script>
