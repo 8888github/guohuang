@@ -6,7 +6,6 @@
     text-decoration: none;
     color: inherit;
     font-weight: normal;
-    font-family: "微软雅黑";
     box-sizing: border-box;
     font-style: normal;
     outline: none;
@@ -157,6 +156,7 @@ a {
     transform: translate(-50%, -50%);
     padding-top: 15%;
     z-index: 999;
+    display: none;
 }
 
 .bounced_main .content_main {
@@ -220,5 +220,6 @@ a {
     text-align: center;
     line-height: 0.4rem;
     border-radius: 0.08rem;
+    display: none;
     
 }
