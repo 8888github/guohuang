@@ -28,7 +28,7 @@
         </div>
 
         <div class="privacy-main">
-            <div class="font_size_12">
+            <div class="title_h font_size_12">
                 中国国际航空股份有限公司（以下简称为 “ 我们 ”）深知个人信息的重要性，我们将按法律法规要求，采取相应安全保护措施。我们希望通过本隐私政策向您说明在您 使用我们的产品和服务时，
                 我们如何收集和使用您的个人信息。
             </div>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="titles">
                         报名该活动默认同时报名</div>
-                    <div>广汽集团员工身份认证活动</div>
+                    <div class="guangqi" id="showTitle">广汽集团员工身份认证活动</div>
                 </div>
             </div>
             <div class="btn font_size_14" id="form_but">同意并参与</div>
@@ -125,6 +125,7 @@
         let imgradio = document.querySelector("#imgradio");
         let oform_but = document.querySelector("#form_but");
         let otips = document.querySelector("#tips");
+        let showTitle = document.querySelector("#showTitle");
 
 
         // 初始化
@@ -146,16 +147,18 @@
             return;
         })
 
+        showTitle.addEventListener("click",function(){
+           obounced.style.display = "block";
+        })
+
 
         //切换
         function cutRadio() {
             cut = !cut
             if (cut) {
                 imgradio.setAttribute("src", "./image/radio_opt.png");
-                obounced.style.display = "block";
             } else {
                 imgradio.setAttribute("src", "./image/radio_cancel.png");
-                obounced.style.display = "none";
             }
             return cut
         }
@@ -172,6 +175,8 @@
 
         Oclose.addEventListener('click', function () {
             obounced.style.display = "none";
+            imgradio.setAttribute("src", "./image/radio_opt.png");
+            cut = true;
         })
 
 
