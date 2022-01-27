@@ -11,194 +11,251 @@
 
     <script src="./js/flexible.js" type="text/javascript" charset="utf-8"></script>
     <script src="./js/mian.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/server.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/jq.js" type="text/javascript" charset="utf-8"></script>
+
     <title>3个月快速升级国航金卡活动</title>
 </head>
 
 <body style="font-size: 24px;">
     <div id="app">
-       <header class="app_head">
-           <div class="app_head_img">
-               <img src="./image/head_3.png" alt="">
-           </div>
-       </header>
-       <section class="box1">
-        <div class="bounced_main vux-modal-open" id="obounced">
-            <div class="content_main">
-                <div class="content_title font_size_16">
-                    活动内容
-                </div>
-                <div class="content font_size_12">
-                    <p>1、报名时间：2022年2月1日至2022年6月15日</p>
-                    <p>2、报名方式：以国航会员卡卡号登记报名，或个人信息登记报名（二选一即可）</p>
-                    <p>3、报名条件：</p>
-                    <p>① 填写个人真实信息，并上传广汽集团员工卡照片，和其他航司金卡（限南航、寰宇一家、天合联盟金卡）；</p>
-                    <p>② 广汽集团员工（含下属二级单位或子公司员工），且拥有南航金卡、寰宇一家金卡、天合联盟金卡的员工</p>
-                    <p>4、具体升级要求：</p>
-                    <p>①成功报名的广汽集团员工</p>
-                    <p>②升级条件：2022年4月1日至2022年6月30日期间（以客票旅行日期为准），满足飞行4个（含）国航实际承运的航段，且客票票号以999开头。</p>
-                    <p>③适用舱位：F/A/J/C/D/Z/R/Y/B/M/U/H/Q/V </p>
-                    <p>5、升级名额：共计300人</p>
-                    <p>6、升级操作：活动结束后根据报名成功的先后顺序、客票条件以及飞行情况综合判定升级结果。成功升级金卡后，国航将通过短信方式通知大家。</p>
-                </div>
+        <header class="app_head">
+            <div class="app_head_img">
+                <img src="./image/head_3.png" alt="">
             </div>
-        </div>
-       </section>
-       <section class="box2">
-        <div class="bounced_main vux-modal-open" id="obounced">
-            <div class="content_main">
-                <div class="content_title font_size_14">国航金卡权益</div>
-                <div class="content font_size_12">
-                    <div class="all_img_box">
-                        <!-- <img src="./image/box2_all.png" alt=""> -->
-                        <img src="./image/box2_show.png " alt=""> 
+        </header>
+        <section class="box1">
+            <div class="bounced_main vux-modal-open" id="obounced">
+                <div class="content_main">
+                    <div class="content_title font_size_16">
+                        活动内容
+                    </div>
+                    <div class="content font_size_12">
+                        <p>1、报名时间：2022年2月1日至2022年6月15日</p>
+                        <p>2、报名方式：以国航会员卡卡号登记报名，或个人信息登记报名（二选一即可）</p>
+                        <p>3、报名条件：</p>
+                        <p>①广汽集团员工（含下属二级单位或子公司员工），且拥有其他航司金卡（南航金卡、寰宇一家金卡、天合联盟金卡）的员工</p>
+                        <p>②需填写个人真实信息，并上传广汽集团员工卡照片，和其他航司金卡（南航、寰宇一家、天合联盟金卡）</p>
+                        <p>4、具体升级要求：</p>
+                        <p>①成功报名的广汽集团员工</p>
+                        <p>②升级条件：2022年4月1日至2022年6月30日期间（以客票旅行日期为准），满足飞行4个（含）国航实际承运的航段，且客票票号以999开头。</p>
+                        <p class="ts_title">③适用舱位：F/A/J/C/D/Z/R/Y/B/M/U/H/Q/V</p>
+                        <p>5、升级名额：共计300人</p>
+                        <p>6、升级操作：活动结束后根据报名成功的先后顺序、客票条件以及飞行情况综合判定升级结果。成功升级金卡后，国航将以短信方式通知成功升级的员工。</p>
                     </div>
                 </div>
-                <div class="spread_box">
-                    <div class="spread">
-                        <div class="font_size_12">展开</div>
-                        <div class="top_img">
-                          <!-- <img src="./image/top.png" alt=""> -->
-                          <img src="./image/dow.png" alt="">
+            </div>
+        </section>
+        <section class="box2">
+            <div class="bounced_main vux-modal-open" id="obounced">
+                <div class="content_main">
+                    <div class="content_title font_size_14">国航金卡权益</div>
+                    <div class="content font_size_12">
+                        <div class="all_img_box">
+                            <img id="show_img" src="./image/box2_show.png" alt="">
                         </div>
-                      </div>
+                    </div>
+                    <div class="spread_box">
+                        <div class="spread">
+                            <div class="font_size_12" id="onOan">展开</div>
+                            <div class="top_img">
+                                <img id="oan_img" src="./image/dow.png" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-       </section>
+        </section>
 
-       <section class="box3">
-        <div class="bounced_main vux-modal-open" id="obounced">
-            <div class="content_main">
-                <!-- tab_right tab_left -->
-                <div class="content_title tab_left font_size_14">
-                    <div class="tab ">登记个人信息报名</div>
-                    <div class="tab">登记国航凤凰知音会员卡报名</div>
-                </div>
+        <section class="box3">
+            <div class="bounced_main vux-modal-open" id="obounced">
+                <div class="content_main">
+                    <div class="content_title tab_right font_size_14" id="onTab">
+                        <div class="tab">登记个人信息报名</div>
+                        <div class="tab">登记国航凤凰知音会员卡报名</div>
+                    </div>
 
-                <div class="text-main">
-                    <div class="inputs text-name">
-                        <p class="input_title">
-                            <span class="input_titlexin font_size_14">*</span>
-                            <span class="input_title_s font_size_14">国航会员卡号：</span>
-                        </p>
-                        <input id="name" type="text" value="" placeholder="请输入国航会员卡号">
-                    </div>
-                    <div class="inputs text-Mobile">
-                        <p class="input_title">
-                            <span class="input_titlexin font_size_14">*</span>
-                            <span class="input_title_s font_size_14">手机号码：</span>
-                        </p>
-                        <input id="mobile" type="text" value="" placeholder="请输入手机号码">
-                    </div>
-                    <div class="inputs text-identity">
-                        <p class="input_title">
-                            <span class="input_titlexin font_size_14">*</span>
-                            <span class="input_title_s font_size_14">广汽集团员工卡照片：</span>
-                        </p>
-                        
-                        <div class="card">
-                            <input id="upload" type="file" accept=".jpg" />
-                            <div class="view">
-                                <!-- 上传成功后 -->
-                                <div id="imgContainer" class="img-container">
-                                    <img id="img" />
-                                    <!-- 鼠标移入展示 查看 与 删除 操作 -->
-                                    <div class="img-mask">
-                                        <span id="showImg">查看</span>
-                                        <span id="delImg">删除</span>
+                    <div id="text_main1">
+                        <div class="text-main">
+                            <div class="inputs text-name">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">国航会员卡号：</span>
+                                </p>
+                                <input id="form_card1" type="text" value="" placeholder="请输入国航会员卡号">
+                            </div>
+                            <div class="inputs text-Mobile">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">姓名：</span>
+                                </p>
+                                <input id="form_name1" type="text" value="" placeholder="请输入姓名">
+                            </div>
+                            <div class="inputs text-Mobile">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">手机号码：</span>
+                                </p>
+                                <input id="form_mobile1" type="text" value="" placeholder="请输入手机号码">
+                            </div>
+                            <div class="inputs text-identity clear_boder">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">广汽集团员工卡照片：</span>
+                                </p>
+
+                                <!-- 1 -->
+                                <div class="card">
+                                    <div class="oncover1">
+                                        <input id="avatar1" type="file" name="mypic">
+                                    </div>
+                                    <div class="view">
+
+                                        <div id="imgContainer1" class="img-container">
+                                            <img id="form_img1" />
+                                            <div class="img-mask font_size_10">
+                                                <span id="delImg ">X</span>
+                                            </div>
+                                        </div>
+                                        <span id="icon">+</span>
                                     </div>
                                 </div>
-                                <!-- 上传成功前 -->
-                                <span id="icon">+</span>
-                            </div>
-                        </div>
-                    
-                        <!-- 预览图片的 modal 框 -->
-                        <div id="modal">
-                            <span id="closeIcon">关闭</span>
-                            <div class="content">
-                                <img id="modalImg">
-                            </div>
-                        </div>
 
-                    </div>
-
-                    <!-- 2 -->
-
-                    <div class="inputs text-identity">
-                        <p class="input_title">
-                            <span class="input_titlexin font_size_14">*</span>
-                            <span class="input_title_s font_size_14">国内其他各航司金卡（仅限南航金卡、寰宇一：</span>
-                        </p>
-                        
-                        <div class="card">
-                            <input id="upload" type="file" accept=".jpg" />
-                            <div class="view">
-                                <!-- 上传成功后 -->
-                                <div id="imgContainer" class="img-container">
-                                    <img id="img" />
-                                    <!-- 鼠标移入展示 查看 与 删除 操作 -->
-                                    <div class="img-mask">
-                                        <span id="showImg">查看</span>
-                                        <span id="delImg">删除</span>
+                                <div id="modal">
+                                    <span id="closeIcon">关闭</span>
+                                    <div class="content">
+                                        <img id="modalImg">
                                     </div>
                                 </div>
-                                <!-- 上传成功前 -->
-                                <span id="icon">+</span>
+
+                            </div>
+
+                            <!-- 2 -->
+
+                            <div class="inputs text-identity form2 clear_boder">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">国内其他各航司金卡（仅限南航金卡、寰宇一家金卡、天合联盟金卡）：</span>
+                                </p>
+
+                                <div class="card">
+                                    <div class="input2">
+                                        <input id="avatar2" type="file" name="mypic" />
+                                    </div>
+                                    <div class="view">
+                                        <div id="imgContainer2" class="img-container">
+                                            <img id="form_img2" />
+                                            <div class="img-mask">
+                                                <!-- <span id="delImg">删除</span> -->
+                                            </div>
+                                        </div>
+                                        <span id="icon">+</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="submit font_size_14" id="onSubmit1">
+                                报名
                             </div>
                         </div>
-                    
-                        <!-- 预览图片的 modal 框 -->
-                        <div id="modal">
-                            <span id="closeIcon">关闭</span>
-                            <div class="content">
-                                <img id="modalImg">
+                    </div>
+
+                    <div id="text_main2" style="display: none;">
+                        <div class="text-main">
+                            <div class="inputs text-name">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">个人姓名：</span>
+                                </p>
+                                <input id="form_name2" type="text" value="" placeholder="请输入真实姓名">
+                            </div>
+
+                            <div class="inputs text-identity">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">身份证号码：</span>
+                                </p>
+                                <input id="form_identity2" type="text" value="" placeholder="请输入对应身份证号码">
+                            </div>
+
+
+                            <div class="inputs text-identity clear_boder">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">广汽集团员工卡照片：</span>
+                                </p>
+
+                                <!-- 1 -->
+                                <div class="card">
+                                    <input id="form_upload1" type="file" accept=".jpg" />
+                                    <div class="view">
+                                        <div id="form2_content1" class="img-container font2_container1">
+                                            <img id="form2_img1" />
+                                            <!-- <div class="img-mask">
+                                                <span id="showImg">查看</span>
+                                                <span id="delImg">删除</span>
+                                            </div> -->
+                                        </div>
+                                        <span id="icon">+</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="inputs text-identity clear_boder">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">国内其他各航司金卡（仅限南航金卡、寰宇一家金卡、天合联盟金卡）:</span>
+                                </p>
+
+                                <div class="card">
+                                    <input id="form_upload2" type="file" />
+                                    <div class="view">
+
+                                        <div id="font2_container2" class="img-container">
+                                            <img id="form2_img2" />
+                                            <!-- <div class="img-mask">
+                                                <span id="showImg">查看</span>
+                                                <span id="delImg">删除</span>
+                                            </div> -->
+                                        </div>
+                                        <span id="icon">+</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="submit font_size_14" id="onSubmit2">
+                                报名
                             </div>
                         </div>
-
-                    </div>
-
-
-                    <div class="submit" id="onSubmit">
-                        报名
                     </div>
                 </div>
-
-
-                <div class="text-main">
-                    <div class="text-name">
-                        <input id="name" type="text" value="" placeholder="请输入真实姓名">
-                    </div>
-                    <div class="text-Mobile">
-                        <input id="mobile" type="text" value="" placeholder="请输入手机号码">
-                    </div>
-                    <div class="text-identity">
-                        <input id="identity" type="text" value="" placeholder="请输入对应身份证号码">
-                    </div>
-                    <div class="submit" id="onSubmit">
-                        报名1
-                    </div>
-                </div>
-
             </div>
-        </div>
-       </section>
-
-       <footer></footer>
+        </section>
+    </div>
+    <!-- 弹框提示 -->
+    <div class="tip font_size_12" id="tips">
+        请完善信息
     </div>
 
+    <!-- loading -->
+    <div id="loading_M">
+        <div  class="loading">
+            <div class="loader" >
+                <div class="loader-inner ball-clip-rotate">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
 
-
-<!-- 控制台输出 -->
-<!-- <script src="./js/vconsole.min.js"></script>
+<!-- 调试工具 -->
+<!-- <script src="./js/eruda.min.js"></script>
 <script>
-    var vConsole = new VConsole();
+    eruda.init();
 </script> -->
-
-<script src="./js/eruda.min.js"></script>
-<script>
-	eruda.init();
-</script>
