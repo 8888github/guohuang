@@ -285,12 +285,12 @@
 }
 
 .content_main .text-identity input {
-    height:auto;
-    /* height: 0.54rem; */
     background: #FFFFFF;
-    padding-left: 0.12rem;
+    /* padding-left: 0.12rem; */
     outline: none;
     border: none;
+    height: 100%;
+    width: 100%;
 }
 
 .content_main .submit {
@@ -319,6 +319,7 @@
     border: 0.01rem dashed #d9d9d9;
     border-radius: 0.06rem;
     margin: 0.08rem 0.1rem;
+    overflow: hidden;
 }
 
 #upload{
@@ -389,9 +390,9 @@
     
 }
 
-.img-container:active .img-mask {
+/* .img-container:active .img-mask {
     opacity: 1;
-}
+} */
 
 .img-mask span {
     color: #fff;
