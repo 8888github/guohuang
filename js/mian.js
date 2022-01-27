@@ -320,7 +320,7 @@ window.onload = function () {
     function upload(bottonID,uploadUrl,imgID,showImg){
         
         $(bottonID).on("change", function () {
-            console.log(11);
+
             let file = this.files[0];
             let data = new FormData();
             data.append("mypic", file);
