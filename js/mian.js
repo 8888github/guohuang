@@ -265,12 +265,6 @@ window.onload = function () {
         upload("#avatar1",uploadUrl,'#form_img1','imgContainer1')
     })
 
-    // 
-    $("#avatar1_view").on("click", function () {
-        upload("#avatar1",uploadUrl,'#form_img1','imgContainer1')
-        console.log(555);
-    })
-
 
     // 南航金卡
    
