@@ -1,17 +1,19 @@
 window.onload = function () {
 
+   
+
+    // 域名
+    let API = "http://china-air.t1.mget.cn";
     // 上传接口
     const uploadUrl = "http://china-air.t1.mget.cn/upload.php";
-     // 域名
-    let API = "http://china-air.t1.mget.cn";
     // 表单提交接口
     const fromUrl = "http://china-air.t1.mget.cn/web.php";
-
 
 
     // 初始化
     let show_img = false;
     function showAn() {
+
         // 展开按钮
         let onOan = document.getElementById("onOan");
         let oan_img = document.getElementById("oan_img");
@@ -21,9 +23,9 @@ window.onload = function () {
 
         show_img = !show_img;
         if (show_img) {
-            oshow_img.src = "./image/box2_all.png";
-            oan_img.src = "./image/top.png";
-            onOan.innerHTML = "收起";
+           oshow_img.src = "./image/box2_all.png";
+           oan_img.src = "./image/top.png";
+           onOan.innerHTML = "收起";
            ospread_box.style.marginTop = "-1rem"
            ospread_box.style.background = "none";
 
@@ -32,7 +34,6 @@ window.onload = function () {
             oan_img.src = "./image/dow.png";
             onOan.innerHTML = "展开";
             ospread_box.style.height = "1.2rem"
-
             ospread_box.style.marginTop = "-1.2rem"
             ospread_box.style.background = "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF";
             
@@ -133,11 +134,6 @@ window.onload = function () {
             return false;
         }
 
-        // else if(isNaN(per_nfor.ca_crad.trim())){
-        //     tips("请输入正确的国航会员卡号");
-        //     return false;
-        // }
-
         if (per_nfor.name.trim() == "") {
             tips("请输入姓名");
             return false;
@@ -169,7 +165,11 @@ window.onload = function () {
     // 提交个人信息表单
     let onSubmit1 = document.getElementById("onSubmit1");
     onSubmit1.addEventListener('click', function () {
+
         let time = null;
+        let loading = document.getElementById("loading_M");
+       
+       
         // 获取信息
         getperInfor();
 
@@ -177,6 +177,7 @@ window.onload = function () {
         if(!fromAlidation1(per_nfor)){
             return false
         }
+        loading.style.display = "block";
 
         $.ajax({
             url: fromUrl,
@@ -184,9 +185,10 @@ window.onload = function () {
             type: 'post',
             data: per_nfor,
             success: function (res) {
-                tips(res)
+                // tips(res)
                 clearTimeout(time)
                 time = setTimeout(() => {
+                    loading.style.display = "none";
                     window.location.href = "../succeed.html";
                     clearTimeout(time)
                 }, 1800);
@@ -229,13 +231,17 @@ window.onload = function () {
     let onSubmit2 = document.getElementById("onSubmit2");
     onSubmit2.addEventListener('click', function () {
 
+        let loading = document.getElementById("loading_M");
         let time = null;
 
         getClubCard();
+        
 
         if(!fromAlidation2(club_card)){
             return
         }
+        loading.style.display = "block";
+
 
         $.ajax({
             url: fromUrl,
@@ -243,9 +249,10 @@ window.onload = function () {
             type: 'post',
             data: club_card,
             success: function (res) {
-                tips(res)
+                // tips(res)
                 clearTimeout(time)
                 time = setTimeout(() => {
+                    loading.style.display = "none";
                     window.location.href = "../succeed.html";
                     clearTimeout(time)
                 }, 1800);
@@ -253,86 +260,36 @@ window.onload = function () {
         })
     })
 
+    //广汽集团员工卡照片上传
+    $("#avatar1").on("click", function () {
+        upload("#avatar1",uploadUrl,'#form_img1','imgContainer1')
+    })
 
-    upload("#avatar1",uploadUrl,'#form_img1','imgContainer1')
-
-    // upload("#form_img1",uploadUrl,'#form_img1','imgContainer1')
-
-    // 广汽集团员工卡照片上传
-    // $("#avatar1").on("change", function () {
-    //     var file = this.files[0];
-    //     var data = new FormData();
-    //     data.append("mypic", file);
-    //     $.ajax({
-    //         type: "post",
-    //         url: uploadUrl,
-    //         data: data,
-    //         contentType: false,
-    //         processData: false,
-    //         success: function (res) {
-    //             $('#form_img1').attr("src", API + "/" + res)
-    //             let imgContainer = document.getElementById('imgContainer1');
-    //             imgContainer.style.display = "block"
-    //         },
-    //     });
-    // })
-
-    // 南航金卡
-    upload("#avatar2",uploadUrl,'.form2 #form_img2','imgContainer2')
-
+    // 
+    $("#avatar1_view").on("click", function () {
+        upload("#avatar1",uploadUrl,'#form_img1','imgContainer1')
+        console.log(555);
+    })
 
 
     // 南航金卡
-    // $("#avatar2").on("change", function () {
-
-    //     var file = this.files[0];
-    //     let data = new FormData();
-
-    //     data.append("mypic", file);
-
-    //     $.ajax({
-    //         type: "post",
-    //         url: uploadUrl,
-    //         data: data,
-    //         contentType: false,
-    //         processData: false,
-    //         success: function (res) {
-    //             $('.form2 #form_img2').attr("src", "http://china-air.t1.mget.cn/" + res)
-    //             let imgContainer = document.getElementById('imgContainer2');
-    //             imgContainer.style.display = "block"
-
-    //         },
-    //     });
-    // })
-
-    // 登记 _ 广汽集团员工卡照片上传
-    upload("#form_upload1",uploadUrl,'#form2_img1','form2_content1')
+   
+    $("#avatar2").on("change", function () {
+        upload("#avatar2",uploadUrl,'.form2 #form_img2','imgContainer2')
+    })
 
 
     // 登记 _ 广汽集团员工卡照片上传
-    // $("#form_upload1").on("change", function () {
+    $("#form_upload1").on("change", function () {
+        upload("#form_upload1",uploadUrl,'#form2_img1','form2_content1')
+    })
 
-    //     var file = this.files[0];
-    //     var data = new FormData();
-    //     data.append("mypic", file);
-
-    //     $.ajax({
-    //         type: "post",
-    //         url: uploadUrl,
-    //         data: data,
-    //         contentType: false,
-    //         processData: false,
-    //         success: function (res) {
-    //             $('#form2_img1').attr("src", API + "/" + res)
-    //             let imgContainer = document.getElementById('form2_content1');
-    //             imgContainer.style.display = "block"
-    //         },
-    //     });
-    // });
 
 
     // 登记 _ 广汽集团员工卡照片上传
-    upload("#form_upload2",uploadUrl,'#form2_img2','font2_container2')
+    $("#form_upload2").on("change", function () {
+        upload("#form_upload2",uploadUrl,'#form2_img2','font2_container2')
+    })
 
 
     // 登记 _ 广汽集团员工卡照片上传
@@ -358,8 +315,6 @@ window.onload = function () {
 
 
 
-
-
     // 封装上传
     /**
      * 按钮 ID  dom
@@ -371,7 +326,7 @@ window.onload = function () {
     function upload(bottonID,uploadUrl,imgID,showImg){
         
         $(bottonID).on("change", function () {
-
+            console.log(11);
             let file = this.files[0];
             let data = new FormData();
             data.append("mypic", file);

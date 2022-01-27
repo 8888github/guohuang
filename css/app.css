@@ -61,7 +61,7 @@
     color: #4E0A0A;
     font-weight: bold;
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 50%;
     transform: translate(-50%,-50%);
 
@@ -148,13 +148,13 @@
 @keyframes shaking {
 
     0% {
-        transform: translateY(-1px);
+        transform: translateY(-0.01rem);
     }
     50% {
-        transform: translateY(1px);
+        transform: translateY(0.01rem);
     }
     100% {
-        transform: translateY(-1px);
+        transform: translateY(-0.01rem);
     }
 }
 
@@ -200,7 +200,7 @@
 }
 
 .box3  .content_title .tab{
-   width: 327px;
+   width: 3.27rem;
    padding: 0.08rem 0.16rem;
 
 }
@@ -266,7 +266,7 @@
 }
 
 .inputs:not(:first-child) {
-    margin-top: 16px;
+    margin-top: 0.16rem;
 }
 
 .inputs .input_title .input_titlexin{
@@ -285,7 +285,8 @@
 }
 
 .content_main .text-identity input {
-    height: 0.54rem;
+    height:auto;
+    /* height: 0.54rem; */
     background: #FFFFFF;
     padding-left: 0.12rem;
     outline: none;
@@ -314,9 +315,9 @@
     width: 0.64rem;
     height: 0.64rem;
     padding: 0.05rem;
-    margin-right: 20px;
-    border: 1px dashed #d9d9d9;
-    border-radius: 6px;
+    margin-right: 0.20rem;
+    border: 0.01rem dashed #d9d9d9;
+    border-radius: 0.06rem;
     margin: 0.08rem 0.1rem;
 }
 
@@ -347,7 +348,6 @@
 
 .card .view #icon {
     display: inline-block;
-    font-size: 30px;
     color: #DDDDDD ;
 }
 
@@ -385,7 +385,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    display: block;
     
 }
 
@@ -395,7 +395,7 @@
 
 .img-mask span {
     color: #fff;
-    margin: 0 10px;
+    margin: 0 0.1rem;
     cursor: pointer;
 }
 
@@ -409,7 +409,7 @@
     transform: translate(-50%, -50%);
     width: 0;
     height: 0;
-    box-shadow: 0 0 10px #d9d9d9;
+    box-shadow: 0 0 0.10rem #d9d9d9;
     background: rgba(0, 0, 0, .3);
     /* transition: all .1s ease-in-out; */
     overflow: hidden;
@@ -484,13 +484,13 @@
 
 .ball-clip-rotate>div {
     background-color: #fff;
-    width: 50px;
-    height: 50px;
+    width: 0.46rem;
+    height: 0.46rem;
     border-radius: 100%;
-    margin: 2px;
+    margin: 0.02rem;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    border: 2px solid #fff;
+    border: 0.02rem solid #fff;
     border-bottom-color: transparent;
     background: transparent !important;
     display: inline-block;
