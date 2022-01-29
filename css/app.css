@@ -110,7 +110,9 @@
     padding: 0.24rem 0.24rem 0 0.24rem;
 }
 
-.spread_box{
+/* 原本的 */
+
+/* .spread_box{
     width:100%;
     height: 1.2rem;
     display: flex;
@@ -137,6 +139,42 @@
     justify-content: center;
     align-items: center;
     margin-top: 0.88rem;
+} */
+
+
+.spread_box{
+    width:100%;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: -0.76rem;
+}
+
+.show_img {
+    width:100%;
+    height: 0.54rem;
+    border-bottom-left-radius: 0.08rem;
+    border-bottom-right-radius: 0.08rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fffbfb 40%);
+
+}
+
+.box2 .content_main .spread{
+    width: 0.64rem;
+    height: 0.24rem;
+    background-color: #FF4D4D;
+    border-radius: 0.12rem; 
+    color: white;
+    text-align: center;
+    line-height: 0.05rem;
+    margin-bottom: -0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box2 .content_main .spread .top_img{
@@ -290,6 +328,7 @@
     outline: none;
     border: none;
     height: 0.54rem;
+
 }
 
 .content_main .submit {
@@ -334,6 +373,7 @@
     height: 100%;
     opacity: 0;
     cursor: pointer;
+    padding: 144rem;
 }
 
 
@@ -386,17 +426,25 @@
     justify-content: center;
     align-items: center;
     display: block;
+
     
 }
 
-/* .img-container:active .img-mask {
+.img-container:hover .img-mask {
     opacity: 1;
-} */
+}
 
 .img-mask span {
     color: #fff;
     margin: 0 0.1rem;
     cursor: pointer;
+    position: absolute;
+    right: -0.1rem;
+}
+
+.img-mask span img{
+    width: 0.18rem;
+    height: 0.18rem;
 }
 
 

@@ -39,6 +39,7 @@
                         <p>4、具体升级要求：</p>
                         <p>①成功报名的广汽集团员工</p>
                         <p>②升级条件：2022年4月1日至2022年6月30日期间（以客票旅行日期为准），满足飞行4个（含）国航实际承运的航段，且客票票号以999开头。</p>
+                        <p> 提示：旅行航段日期需满足在成功报名日期当天（含）之后，才能计算为符合升级金卡条件的航段。</p>
                         <p class="ts_title">③适用舱位：F/A/J/C/D/Z/R/Y/B/M/U/H/Q/V</p>
                         <p>5、升级名额：共计300人</p>
                         <p>6、升级操作：活动结束后根据报名成功的先后顺序、客票条件以及飞行情况综合判定升级结果。成功升级金卡后，国航将以短信方式通知成功升级的员工。</p>
@@ -56,10 +57,12 @@
                         </div>
                     </div>
                     <div class="spread_box">
-                        <div class="spread">
-                            <div class="font_size_12" id="onOan">展开</div>
-                            <div class="top_img">
-                                <img id="oan_img" src="./image/dow.png" alt="">
+                        <div class="show_img" id="show_imgID">
+                            <div class="spread">
+                                <div class="font_size_12" id="onOan">展开</div>
+                                <div class="top_img">
+                                    <img id="oan_img" src="./image/dow.png" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -82,21 +85,21 @@
                                     <span class="input_titlexin font_size_14">*</span>
                                     <span class="input_title_s font_size_14">国航会员卡号：</span>
                                 </p>
-                                <input id="form_card1" type="text" value="" placeholder="请输入国航会员卡号">
+                                <input class="font_size_14"  id="form_card1" type="text" value="" placeholder="请输入国航会员卡号">
                             </div>
                             <div class="inputs text-Mobile">
                                 <p class="input_title">
                                     <span class="input_titlexin font_size_14">*</span>
                                     <span class="input_title_s font_size_14">姓名：</span>
                                 </p>
-                                <input id="form_name1" type="text" value="" placeholder="请输入姓名">
+                                <input class="font_size_14" id="form_name1" type="text" value="" placeholder="请输入姓名">
                             </div>
                             <div class="inputs text-Mobile">
                                 <p class="input_title">
                                     <span class="input_titlexin font_size_14">*</span>
                                     <span class="input_title_s font_size_14">手机号码：</span>
                                 </p>
-                                <input id="form_mobile1" type="text" value="" placeholder="请输入手机号码">
+                                <input class="font_size_14" id="form_mobile1" type="text" value="" placeholder="请输入手机号码">
                             </div>
                             <div class="inputs text-identity clear_boder">
                                 <p class="input_title">
@@ -107,13 +110,16 @@
                                 <!-- 1 -->
                                 <div class="card">
                                     <div class="oncover1">
-                                        <input id="avatar1" type="file" name="mypic">
+                                        <input id="avatar1" type="file" name="mypic" accept="image/png, image/jpeg,image/jpg"/>
                                     </div>
                                     <div class="view" id="avatar1_view">
                                         <div id="imgContainer1" class="img-container">
                                             <img id="form_img1" />
-                                            <div class="img-mask font_size_10">
-                                                <span id="delImg ">X</span>
+                                            <div class="img-mask font_size_14">
+                                                <span id="form1_delImg1">
+                                                    <img src="./image/delete.png" alt="">
+                                                </span>
+                                                
                                             </div>
                                         </div>
                                         <span id="icon" class="font_size_20">+</span>
@@ -139,14 +145,16 @@
 
                                 <div class="card">
                                     <div class="input2">
-                                        <input id="avatar2" type="file" name="mypic" />
+                                        <input id="avatar2" type="file" name="mypic" accept="image/png, image/jpeg,image/jpg" />
                                     </div>
                                     <div class="view">
                                         <div id="imgContainer2" class="img-container">
                                             <img id="form_img2" />
-                                            <!-- <div class="img-mask">
-                                                <span id="delImg">删除</span>
-                                            </div> -->
+                                            <div class="img-mask font_size_10">
+                                                <span id="form1_delImg2">
+                                                    <img src="./image/delete.png" alt="">
+                                                </span>
+                                            </div>
                                         </div>
                                         <span id="icon" class="font_size_20">+</span>
                                     </div>
@@ -167,7 +175,14 @@
                                     <span class="input_titlexin font_size_14">*</span>
                                     <span class="input_title_s font_size_14">个人姓名：</span>
                                 </p>
-                                <input id="form_name2" type="text" value="" placeholder="请输入真实姓名">
+                                <input class="font_size_14" id="form_name2" type="text" value="" placeholder="请输入真实姓名">
+                            </div>
+                            <div class="inputs text-Mobile">
+                                <p class="input_title">
+                                    <span class="input_titlexin font_size_14">*</span>
+                                    <span class="input_title_s font_size_14">手机号码：</span>
+                                </p>
+                                <input class="font_size_14" id="form_mobile2" type="text" value="" placeholder="请输入手机号码">
                             </div>
 
                             <div class="inputs text-identity">
@@ -175,7 +190,7 @@
                                     <span class="input_titlexin font_size_14">*</span>
                                     <span class="input_title_s font_size_14">身份证号码：</span>
                                 </p>
-                                <input id="form_identity2" type="text" value="" placeholder="请输入对应身份证号码">
+                                <input class="font_size_14" id="form_identity2" type="text" value="" placeholder="请输入对应身份证号码">
                             </div>
 
 
@@ -187,14 +202,15 @@
 
                                 <!-- 1 -->
                                 <div class="card">
-                                    <input id="form_upload1" type="file" />
+                                    <input id="form_upload1" type="file" name="mypic" accept="image/png, image/jpeg,image/jpg"/>
                                     <div class="view">
                                         <div id="form2_content1" class="img-container font2_container1">
                                             <img id="form2_img1" />
-                                            <!-- <div class="img-mask">
-                                                <span id="showImg">查看</span>
-                                                <span id="delImg">删除</span>
-                                            </div> -->
+                                            <div class="img-mask font_size_10">
+                                                <span id="form2_delImg1">
+                                                    <img src="./image/delete.png" alt="">
+                                                </span>
+                                            </div>
                                         </div>
                                         <span id="icon" class="font_size_20">+</span>
                                     </div>
@@ -209,15 +225,16 @@
                                 </p>
 
                                 <div class="card">
-                                    <input id="form_upload2" type="file" />
+                                    <input id="form_upload2" type="file" name="mypic" accept="image/png, image/jpeg,image/jpg"/>
                                     <div class="view">
 
                                         <div id="font2_container2" class="img-container">
                                             <img id="form2_img2" />
-                                            <!-- <div class="img-mask">
-                                                <span id="showImg">查看</span>
-                                                <span id="delImg">删除</span>
-                                            </div> -->
+                                            <div class="img-mask font_size_10">
+                                                <span id="form2_delImg2">
+                                                    <img src="./image/delete.png" alt="">
+                                                </span>
+                                            </div>
                                         </div>
                                         <span id="icon" class="font_size_20">+</span>
                                     </div>

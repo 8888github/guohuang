@@ -19,23 +19,25 @@ window.onload = function () {
         let oan_img = document.getElementById("oan_img");
         let oshow_img = document.getElementById("show_img");
         let ospread_box = document.querySelector(".spread_box")
-
+        let show_imgID = document.getElementById("show_imgID")
+ 
 
         show_img = !show_img;
         if (show_img) {
            oshow_img.src = "./image/box2_all.png";
            oan_img.src = "./image/top.png";
            onOan.innerHTML = "收起";
-           ospread_box.style.marginTop = "-1rem"
+           ospread_box.style.height = "1.2rem"
+           ospread_box.style.marginTop = "none"
            ospread_box.style.background = "none";
 
         } else {
             oshow_img.src = "./image/box2_show.png";
             oan_img.src = "./image/dow.png";
             onOan.innerHTML = "展开";
-            ospread_box.style.height = "1.2rem"
-            ospread_box.style.marginTop = "-1.2rem"
-            ospread_box.style.background = "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF";
+            show_imgID.style.height = "0.54rem"
+            ospread_box.style.height = "1rem"
+            show_imgID.style.background = "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fffbfb 40%)";
             
         }
     }
@@ -62,10 +64,8 @@ window.onload = function () {
         }, 3200)
     }
 
-    // 登记个人信息报名
+    // 登记国航凤凰知音会员卡报名
     let per_nfor = {};
-
-    //获取个人信息 
     function getperInfor() {
 
         let card = document.getElementById("form_card1");
@@ -79,24 +79,26 @@ window.onload = function () {
         per_nfor.mobile = mobile.value;
         per_nfor.work_card = img1.src;
         per_nfor.gold_card = img2.src;
-        per_nfor.type = 1;
+        per_nfor.type = 2;
 
     }
 
-    // 登记国航凤凰知音会员卡报名
+   // 登记个人信息报名
     let club_card = {};
     function getClubCard() {
 
         let name = document.getElementById("form_name2");
+        let mobile = document.getElementById("form_mobile2")
         let form_identity2 = document.getElementById("form_identity2");
         let img1 = document.getElementById("form2_img1");
         let img2 = document.getElementById("form2_img2");
 
         club_card.name = name.value;
+        club_card.mobile = mobile.value;
         club_card.id_crad = form_identity2.value;
         club_card.work_card = img1.src;
         club_card.gold_card = img2.src;
-        club_card.type = 2;
+        club_card.type = 1;
 
     }
 
@@ -127,7 +129,7 @@ window.onload = function () {
     }
 
 
-    // 个人信息验证
+    // 会员卡验证
     function fromAlidation1(per_nfor) {
         if (per_nfor.ca_crad.trim() == "") {
             tips("请输入国航会员卡号");
@@ -162,7 +164,7 @@ window.onload = function () {
 
 
 
-    // 提交个人信息表单
+    // 提交会员卡信息表单
     let onSubmit1 = document.getElementById("onSubmit1");
     onSubmit1.addEventListener('click', function () {
 
@@ -198,13 +200,21 @@ window.onload = function () {
     })
 
 
-    // 会员卡验证
+    // 个人信息验证
     function fromAlidation2(club_card) {
 
         if (club_card.name.trim() === "") {
             tips("请输入真实姓名");
             return false;
         }
+        if (club_card.mobile.trim() == "") {
+            tips("请填写手机号");
+            return;
+        } else if (!(/^1[3|4|5|7|8|9][0-9]{9}$/.test(club_card.mobile))) {
+            tips("请填写正确的手机号");
+            return false;
+        }
+        
         if (club_card.id_crad.trim() === "") {
             tips("请输入身份证号码");
             return false;
@@ -227,7 +237,7 @@ window.onload = function () {
     }
 
 
-    // 提交会员卡
+    // 提交个人信息
     let onSubmit2 = document.getElementById("onSubmit2");
     onSubmit2.addEventListener('click', function () {
 
@@ -260,30 +270,61 @@ window.onload = function () {
         })
     })
 
-    //广汽集团员工卡照片上传
+    //广汽集团员工卡照片上传1
     $("#avatar1").on("click", function () {
         upload("#avatar1",uploadUrl,'#form_img1','imgContainer1')
     })
 
 
-    // 南航金卡
-   
-    $("#avatar2").on("change", function () {
-        upload("#avatar2",uploadUrl,'.form2 #form_img2','imgContainer2')
+    // 删除广汽集团员工卡照片上传1
+    $("#form1_delImg1").on("click", function () {
+        $("#form_img1").attr("src", "");
+        $("#imgContainer1").css("display","none")
     })
 
 
-    // 登记 _ 广汽集团员工卡照片上传
-    $("#form_upload1").on("change", function () {
+    // 南航金卡2
+    $("#avatar2").on("click", function () {
+        upload("#avatar2",uploadUrl,'#form_img2','imgContainer2')
+    })
+
+    // 删除南航金卡2
+    $("#form1_delImg2").on("click", function () {
+        $("#form_img2").attr("src", "");
+        $("#imgContainer2").css("display","none")
+    })
+
+    
+
+
+    // 登记 _ 广汽集团员工卡照片上传3
+    $("#form_upload1").on("click", function () {
         upload("#form_upload1",uploadUrl,'#form2_img1','form2_content1')
     })
 
 
+    // 删除登记 _ 广汽集团员工卡照片上传3
+    $("#form2_delImg1").on("click", function () {
+        $("#form2_img1").attr("src", "");
+        $("#form2_content1").css("display","none")
+    })
 
-    // 登记 _ 广汽集团员工卡照片上传
-    $("#form_upload2").on("change", function () {
+
+
+
+    // 登记 _ 广汽集团员工卡照片上传4
+    $("#form_upload2").on("click", function () {
         upload("#form_upload2",uploadUrl,'#form2_img2','font2_container2')
     })
+
+
+    // 删除登记 _ 广汽集团员工卡照片上传4
+    $("#form2_delImg2").on("click", function () {
+        $("#form2_img2").attr("src", "");
+        $("#font2_container2").css("display","none")
+    })
+
+    
 
 
     // 登记 _ 广汽集团员工卡照片上传
@@ -318,8 +359,16 @@ window.onload = function () {
      * showimg dom 
      */ 
     function upload(bottonID,uploadUrl,imgID,showImg){
+
+        // console.log("bottonID：",bottonID);
+        // console.log("uploadUrl：",uploadUrl);
+        // console.log("imgID：",imgID);
+        // console.log("showImg：",showImg);
+
         
         $(bottonID).on("change", function () {
+
+            $(imgID).attr("src", " ")
 
             let file = this.files[0];
             let data = new FormData();
